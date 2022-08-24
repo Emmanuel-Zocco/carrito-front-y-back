@@ -15,7 +15,9 @@ const ModeloUsuario = mongoose.model('clients', clientSchema);
 module.exports = router
 
 router.post('/agregarUsuario', (req, res)=>{
-    console.log('funciona')
+    console.log('funcionaaaaa');
+    //res.send({"status":"ok"});
+    //return;
     const nuevousuario = new ModeloUsuario({
         nombre: req.body.nombre,
         edad: req.body.edad,

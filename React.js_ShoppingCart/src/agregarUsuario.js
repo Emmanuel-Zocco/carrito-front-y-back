@@ -17,7 +17,7 @@ function AgregarUsuario(){
             idUsuario: uniqid(),
         }
         console.log(usuario)
-        axios.post('/api/client/agregarusuario', usuario)
+        axios.post('/agregarusuario', usuario)
         .then (res =>{alert(res.data)})
         .then (err =>{console.log(err)} )
     }

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Clock from "react-clock";
-
+//import Clock from "react-clock";
+import Clock from "./modules/clock/reloj"
 function App() {
   
 
@@ -38,7 +38,8 @@ function App() {
   
 
   function verificarPromociones(){
-    let cantArticulos = 0;
+    
+      let cantArticulos = 0;
     let precioTotal = 0;
     if (cart.length>0){
       cart.map((i)=>{
