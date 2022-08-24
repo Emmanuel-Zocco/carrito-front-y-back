@@ -19,7 +19,8 @@ import Clock from './modules/clock/reloj';
 import Clientevip from './modules/clientevip/clientevip'
 import Formulario from './modules/login/log-in';
 import SimpleForm from './modules/login/log-in';
-
+import EditarCliente from './editarCliente';
+import ListaClientes from './listaClientes';
 ReactDOM.render(
   <React.StrictMode>
   <Clock></Clock>
@@ -34,7 +35,7 @@ ReactDOM.render(
     <Route path ="/agregarUsuario" element={<AgregarUsuario/>}> </Route>
     <Route path ="/clientevip" element={<Clientevip />}> </Route>
     <Route path ="/login" element={<SimpleForm />}> </Route>
-    
+    <Route path ="/editarcliente" element={<ListaClientes/>}> </Route>
     </Routes>
     
     </BrowserRouter>

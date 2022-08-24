@@ -5,8 +5,7 @@ function Clock() {
   const [clockState, setClockState] = useState();
   const [timerState, setTimerState] = useState();
   const [horaState, setHoraState] = useState(0);
-//  const [timer, setTimer] = useState(1000);
-//setAdelantarState(1000);
+
   let num = 0;
   function cambiarTiempo(tiempo){
     return tiempo
@@ -35,7 +34,7 @@ function Clock() {
   }
 
   return <div style={{ fontSize: "25px", margin: "30px" }}>{clockState}<span><b>  <button className='btn btn-success' onClick={() => adelantarTiempo()}>
-  Adelantar Tiempo >>
+  Adelantar Tiempo 
 </button></b></span></div> ;
 }
 
