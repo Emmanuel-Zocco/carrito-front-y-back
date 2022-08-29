@@ -33,7 +33,7 @@ function Clock() {
 
   }
 
-  return <div style={{ fontSize: "25px", margin: "30px" }}>{clockState}<span><b>  <button className='btn btn-success' onClick={() => adelantarTiempo()}>
+  return <div style={{ fontSize: "15px", margin: "15px",  }}>{clockState}<span><b>  <button className='btn btn-success' onClick={() => adelantarTiempo()}>
   Adelantar Tiempo 
 </button></b></span></div> ;
 }

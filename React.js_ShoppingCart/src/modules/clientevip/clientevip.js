@@ -1,10 +1,13 @@
 
 import { Link } from "react-router-dom";
-
+import Header from "../Header/header";
+ //Header.Logueado(true);
 const Clientevip = () => {
+ 
   return (
+    
     <div className="home-page">
-      
+     
       <div className="overlay">
         
         <div className="text-section">
@@ -13,9 +16,7 @@ const Clientevip = () => {
           <Link to="/vip" className="browse-button">
             Clientes VIP
           </Link>
-          <Link to="/ofertas" className="browse-button">
-            Ofertas especiales
-          </Link>
+          
         </div>
       </div>
     </div>

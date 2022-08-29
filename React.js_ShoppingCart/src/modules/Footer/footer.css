@@ -1,0 +1,21 @@
+.footer-bar {
+    background-color:  black;
+    
+    border-bottom: 2px solid black;
+    border-top: 1px solid black;
+  
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .bi{
+
+    margin-left: 1250px;
+    color: blue;
+  }
+
+  .red{
+    color:red
+  }
+ 

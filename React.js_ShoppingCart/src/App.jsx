@@ -1,6 +1,8 @@
 import { useState } from "react";
 //import Clock from "react-clock";
 import Clock from "./modules/clock/reloj"
+import Header from "./modules/Header/header";
+
 function App() {
   
 
@@ -126,7 +128,9 @@ function App() {
   }
  
   return (
+  
     <div className='container mt-2'>
+       
       <div className='row justify-content-center'>
         {products.map((item) => (
           <div className='col-3' key={item.id}>

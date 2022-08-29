@@ -45,3 +45,24 @@ app.post('/agregarUsuario', (req, res)=>{
     })
    // nuevousuario.replaceOne
 })
+
+
+router.post('/agregarUsuario', (req, res) => {
+    const nuevousuario = new ModeloUsuario({
+        nombre: req.body.nombre,
+        edad: req.body.edad,
+        estado: req.body.estado,
+        idusuario: req.body.idusuario,
+    })
+    nuevousuario.save (function(err){
+        if(!err){
+            res.send('usuario agregado')
+        }else{res.send(err)}}
+    )}
+)
+app.get('/obtenerusuarios', (req, res) =>{
+    ModeloUsuario.find({}, function(docs, err){if(!err){
+        res.send(docs)
+    }else{res.send(err)}
+})
+})
