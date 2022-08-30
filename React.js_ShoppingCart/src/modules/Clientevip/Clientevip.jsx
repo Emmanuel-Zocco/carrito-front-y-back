@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import Header from "../Header/header";
+import Header from "../Header/Header";
  //Header.Logueado(true);
 const Clientevip = () => {
  

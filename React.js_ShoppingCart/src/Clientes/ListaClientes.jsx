@@ -1,5 +1,5 @@
 import React, {useEffect, useState}from 'react';
-import UsuarioIndividual from './clienteIndividual';
+import UsuarioIndividual from './ClienteIndividual';
 import axios from 'axios'
 
 

@@ -9,24 +9,25 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Appvip from './Appcopy';
 import AppOferta from './App3';
-import HomePage from './modules/homepage/home';
-import Registrar from './modules/registrar';
+import HomePage from './modules/Homepage/Home';
+
 
 
 import bootstrap from 'bootstrap/dist/css/bootstrap.css'
 import * as mongoose from  'mongoose';
-import AgregarUsuario from './agregarUsuario';
-import Clock from './modules/clock/reloj';
-import Clientevip from './modules/clientevip/clientevip'
+import AgregarUsuario from './Clientes/AgregarCliente';
+import Clock from './modules/Reloj/Reloj';
+import Clientevip from './modules/Clientevip/Clientevip'
 
-import SimpleForm from './modules/login/log-in';
-import EditarCliente from './editarCliente';
-import ListaUsuario from './listaClientes';
-import UsuarioIndividual from './clienteIndividual';
-import Header from './modules/Header/header';
-import Footer from './modules/Footer/footer'
+import SimpleForm from './modules/Login/Log-in';
+import EditarCliente from './Clientes/EditarCliente';
+import ListaUsuario from './Clientes/ListaClientes';
+import UsuarioIndividual from './Clientes/ClienteIndividual';
+import Header from './modules/Header/Header';
+import Footer from './modules/Footer/Footer'
 import fruit from './assets/img/fruit.jpg'
-import Login from './modules/login/log-in'
+import Login from './modules/Login/Log-in'
+import Editarcliente from './Clientes/EditarCliente';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -43,11 +44,12 @@ ReactDOM.render(
     <Route  path="/productos" element={<App />}> </Route>  
     <Route path ="/vip" element={<Appvip />}> </Route>
     <Route path ="/ofertas" element={<AppOferta />}> </Route>
-    <Route path ="/agregarUsuario" element={<AgregarUsuario/>}> </Route>
+    <Route path ="/agregarcliente" element={<AgregarUsuario/>}> </Route>
     <Route path ="/clientevip" element={<Clientevip />}> </Route>
     <Route path ="/login" element={<Login />}> </Route>
-    <Route path ="/editarcliente" element={<ListaUsuario/>}> </Route>
-    <Route path ="/listacliente" element={<UsuarioIndividual usuario={{nombre:"nombre",edad:10,estado:"vip"}} />}> </Route>
+    <Route path ="/listacliente" element={<ListaUsuario/>}> </Route>
+    <Route path ="/editarcliente" element={<UsuarioIndividual  />}> </Route>
+    <Route path ="/editarcliente/ :clienteid" element={<Editarcliente />}> </Route>
     </Routes>
    
     </BrowserRouter>
