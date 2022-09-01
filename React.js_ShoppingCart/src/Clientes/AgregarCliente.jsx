@@ -3,13 +3,13 @@ import uniqid from 'uniqid';
 import axios from 'axios';
 
 
-function AgregarUsuario(){
+function AgregarCliente(){
     const [nombre, setNombre]= useState('')
     const [edad, setedad]= useState('')
     const [estado, setestado]= useState('')
    
    
-    function agregarUsuario(){
+    function agregarCliente(){
         var usuario = {
             nombre: nombre,
             edad: edad,
@@ -17,7 +17,7 @@ function AgregarUsuario(){
             idUsuario: uniqid(),
         }
         console.log(usuario)
-        axios.post('/agregarusuario', usuario)
+        axios.post('/agregarCliente', usuario)
         .then (res =>{alert(res.data)})
         .then (err =>{console.log(err)} )
     }
@@ -25,7 +25,7 @@ function AgregarUsuario(){
     return(
     <div className="container" > 
      <div className="row"> 
-        <h2 className="mt-4">crear usuario</h2>
+        <h2 className="mt-4">Crear Cliente</h2>
         </div>
 
         <div className="row"> 
@@ -47,10 +47,10 @@ function AgregarUsuario(){
              <input type="text" className="form-control" value={estado} onChange={(e)=>(setestado(e.target.value))} ></input>
         
         </div>
-        <button  onClick={agregarUsuario} className="btn btn-success">Guardar usuario</button>
+        <button  onClick={agregarCliente} className="btn btn-success">Guardar usuario</button>
         </div>
         </div>
         </div>
 )}
 
-export default AgregarUsuario
+export default AgregarCliente

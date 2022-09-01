@@ -8,7 +8,7 @@ function ListaClientes(){
     
     useEffect(() => {
         
-        axios.get('/obtenerusuarios')
+        axios.get('/obtenerClientes')
         
         .then (res =>{console.log(res.data)
             console.log(res.data)

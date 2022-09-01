@@ -16,7 +16,7 @@ function ClienteIndividual({usuario}){
             <li className='list-group-item'>{usuario.estado}</li>
           
         </ul>
-       <Link to={`/editarcliente/${usuario._id}`}> <li className=' btn btn-success'>Editar</li></Link>
+       <Link to={`/editarCliente/${usuario._id}`}> <li className=' btn btn-success'>Editar</li></Link>
         <button className=' btn btn-success-danger'>Borrar</button>
         <hr className='mt-4'></hr>
         </div>

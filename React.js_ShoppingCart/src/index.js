@@ -44,12 +44,12 @@ ReactDOM.render(
     <Route  path="/productos" element={<Cart />}> </Route>  
     <Route path ="/vip" element={<CartVip />}> </Route>
     <Route path ="/ofertas" element={<CartOferta />}> </Route>
-    <Route path ="/agregarcliente" element={<AgregarUsuario/>}> </Route>
-    <Route path ="/clientevip" element={<Clientevip />}> </Route>
+    <Route path ="/agregarCliente" element={<AgregarUsuario/>}> </Route>
+    <Route path ="/clienteVip" element={<Clientevip />}> </Route>
     <Route path ="/login" element={<Login />}> </Route>
-    <Route path ="/listacliente" element={<ListaUsuario/>}> </Route>
-    <Route path ="/editarcliente" element={<UsuarioIndividual  />}> </Route>
-    <Route path ="/editarcliente/:id" element={<Editarcliente />}> </Route>
+    <Route path ="/listaClientes" element={<ListaUsuario/>}> </Route>
+   
+    <Route path ="/editarCliente/:id" element={<Editarcliente />}> </Route>
     </Routes>
    
     </BrowserRouter>

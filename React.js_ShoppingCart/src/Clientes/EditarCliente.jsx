@@ -11,7 +11,7 @@ function Editarcliente (){
     const [id, setId]= useState('')
 console.log(params)
     useEffect(
-        ()=>{axios.post('/obtenerdatacliente' , {idusuario: params.id}).then(res =>{
+        ()=>{axios.post('/obtenerDataCliente' , {idusuario: params.id}).then(res =>{
             console.log(res.data[0])
             const dataCliente = res.data[0]
             setEstado (dataCliente.estado)
@@ -27,7 +27,7 @@ const actualizarCliente = {
     nombre: nombre,
     estado: estado,
 }
-axios.post('/clienteeditado', actualizarCliente)
+axios.post('/clienteEditado', actualizarCliente)
 .then (res =>{alert(res.data)})
 .then (err =>{console.log(err)} )
     }

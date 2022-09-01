@@ -18,7 +18,22 @@ const Header = (props) => {
       <li className="nav-link home">
           <Link to="/">Home</Link>
         </li>
-       
+        
+        <li className="nav-linkb">
+        <Link to="/listaClientes" className="browse-button">
+            Lista de Clientes
+          </Link>
+        </li>
+        <li className="nav-linkb">
+        
+
+        </li>
+        <li className="nav-linkb">
+        <Link to="/agregarCliente" className="browse-button">
+         Crear Cliente
+          </Link>
+
+        </li>
        
        
         <li className="nav-link">

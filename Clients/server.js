@@ -47,7 +47,7 @@ app.post('/agregarUsuario', (req, res)=>{
 })
 
 
-app.post('/agregarUsuario', (req, res) => {
+app.post('/agregarCliente', (req, res) => {
     const nuevousuario = new ModeloUsuario({
         nombre: req.body.nombre,
         edad: req.body.edad,
@@ -60,21 +60,21 @@ app.post('/agregarUsuario', (req, res) => {
         }else{res.send(err)}}
     )}
 )
-app.get('/obtenerusuarios', (req, res) =>{
+app.get('/obtenerClientes', (req, res) =>{
     ModeloUsuario.find({}, function(docs, err){if(!err){
         res.send(docs)
     }else{res.send(err)}
 })
 })
 
-app.post('/obtenerdatacliente', (req, res) =>{
+app.post('/obtenerDataCliente', (req, res) =>{
     ModeloUsuario.find({_id: req.body.idusuario}, function(docs, err){if(!err){
         res.send(docs)
     }else{res.send(err)}
 })
 })
 
-app.post('/clienteeditado', (req, res) =>{
+app.post('/clienteEditado', (req, res) =>{
     console.log(req.body.id)
    ModeloUsuario.findOneAndUpdate({_id:req.body.id},{
         nombre:req.body.nombre,
