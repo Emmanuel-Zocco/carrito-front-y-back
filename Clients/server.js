@@ -40,14 +40,14 @@ app.post('/agregarUsuario', (req, res)=>{
     console.log(nuevousuario)
     nuevousuario.save (function(err){
         if(!err){
-            res.send('usuario agregado')
+            res.send('Cliente agregado')
         }else{res.send(err)}
     })
    // nuevousuario.replaceOne
 })
 
 
-router.post('/agregarUsuario', (req, res) => {
+app.post('/agregarUsuario', (req, res) => {
     const nuevousuario = new ModeloUsuario({
         nombre: req.body.nombre,
         edad: req.body.edad,
@@ -56,7 +56,7 @@ router.post('/agregarUsuario', (req, res) => {
     })
     nuevousuario.save (function(err){
         if(!err){
-            res.send('usuario agregado')
+            res.send('Cliente agregado')
         }else{res.send(err)}}
     )}
 )
@@ -66,3 +66,27 @@ app.get('/obtenerusuarios', (req, res) =>{
     }else{res.send(err)}
 })
 })
+
+app.post('/obtenerdatacliente', (req, res) =>{
+    ModeloUsuario.find({_id: req.body.idusuario}, function(docs, err){if(!err){
+        res.send(docs)
+    }else{res.send(err)}
+})
+})
+
+app.post('/clienteeditado', (req, res) =>{
+    console.log(req.body.id)
+   ModeloUsuario.findOneAndUpdate({_id:req.body.id},{
+        nombre:req.body.nombre,
+        estado:req.body.estado,
+    },(err)=>{
+       if (!err){
+            res.send("Usuario Modificado")
+       }else{
+            res.send("Error al modificar")
+       }
+    })
+    
+  
+})
+

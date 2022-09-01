@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 
-function Appvip() {
+function CartVip() {
   let totalCarrito = 20
   const [cart, setCart] = useState([])
   const [products] = useState([
@@ -241,4 +241,4 @@ function Appvip() {
           }
 
 
-export default Appvip;
+export default CartVip;

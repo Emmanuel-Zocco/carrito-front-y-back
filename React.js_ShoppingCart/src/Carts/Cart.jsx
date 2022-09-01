@@ -1,13 +1,18 @@
 import { useState } from "react";
+//import Clock from "react-clock";
+import Clock from "../modules/Reloj/Reloj"
+import Header from "../modules/Header/Header";
 
-function AppOferta() {
+function Cart() {
+  
+
   let totalCarrito = 20
   const [cart, setCart] = useState([])
   const [products] = useState([
     {
       id: 1,
       name: "Product 1",
-      price: 400,
+      price: 500,
       url:
         "https://images.pexels.com/photos/59945/strawberry-fruit-delicious-red-59945.jpeg",
       cart: false,
@@ -16,7 +21,7 @@ function AppOferta() {
     {
       id: 2,
       name: "Product 2",
-      price: 200,
+      price: 300,
       url:
         "https://images.pexels.com/photos/52533/orange-fruit-vitamins-healthy-eating-52533.jpeg",
       cart: false,
@@ -25,7 +30,7 @@ function AppOferta() {
     {
       id: 3,
       name: "Product 3",
-      price: 500,
+      price: 600,
       url:
         "https://images.pexels.com/photos/51312/kiwi-fruit-vitamins-healthy-eating-51312.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       cart: false,
@@ -34,8 +39,9 @@ function AppOferta() {
   ])
   
 
-  function verificarPromocionesOferta(){
-    let cantArticulos = 0;
+  function verificarPromociones(){
+    
+      let cantArticulos = 0;
     let precioTotal = 0;
     if (cart.length>0){
       cart.map((i)=>{
@@ -49,16 +55,15 @@ function AppOferta() {
    
     if (cantArticulos > 3 && cantArticulos < 10){
       precioTotal = precioTotal * 0.75
-      
     }
     else if (cantArticulos > 9){
-      precioTotal = precioTotal - 300
-    
+      precioTotal = precioTotal - 100
+    }
+    return precioTotal;
+   
   }
-  return precioTotal;
-}
-  
-  function addtocartOferta(item) {
+
+  function addtocart(item) {
     let enCarrito = false;
    
     if (cart.length>0){
@@ -66,7 +71,7 @@ function AppOferta() {
         console.log(i)
        
         if (i.id == item.id){
-          increaseOferta(item)
+          increase(item)
           enCarrito = true
           
         }
@@ -86,7 +91,7 @@ function AppOferta() {
     
 
   }
-  function removetocartOferta(item) {
+  function removetocart(item) {
     let cart2 = cart.filter((i) => i.id != item.id)
     products.map((i) => {
       if (i.id == item.id) {
@@ -97,7 +102,7 @@ function AppOferta() {
    
 
   }
-  function increaseOferta(item) {
+  function increase(item) {
     let x = cart.map((i) => {
 
       if (item.id == i.id) {
@@ -109,7 +114,7 @@ function AppOferta() {
     setCart(x)
      
   }
-  function decreaseOferta(item) {
+  function decrease(item) {
     let x = cart.map((i) => {
 
       if (item.id == i.id && i.quantity > 1) {
@@ -123,7 +128,9 @@ function AppOferta() {
   }
  
   return (
+  
     <div className='container mt-2'>
+       
       <div className='row justify-content-center'>
         {products.map((item) => (
           <div className='col-3' key={item.id}>
@@ -136,14 +143,14 @@ function AppOferta() {
                 {
                   item.cart == false
                   &&
-                  <button className='btn btn-primary' onClick={() => addtocartOferta(item)}>
-                    Add to cart Oferta
+                  <button className='btn btn-primary' onClick={() => addtocart(item)}>
+                    Add to cart 
                 </button>
                 }
                 {
                   item.cart == true
                   &&
-                  <button className='btn btn-success' onClick={() => addtocartOferta(item)}>
+                  <button className='btn btn-success' onClick={() => addtocart(item)}>
                     Added
                 </button>
                 }
@@ -182,14 +189,14 @@ function AppOferta() {
                   </td>
                   <td>
                     <button
-                      onClick={() => decreaseOferta(i)}
+                      onClick={() => decrease(i)}
                       className="btn btn-primary btn-sm"
                     >
                       -
                       </button>
                     {i.quantity}
                     <button
-                      onClick={() => increaseOferta(i)}
+                      onClick={() => increase(i)}
 
                       className="btn btn-primary btn-sm"
                       size="sm"
@@ -199,7 +206,7 @@ function AppOferta() {
                   </td>
 
                   <td>
-                    <button onClick={() => removetocartOferta(i)} className="btn btn-danger">
+                    <button onClick={() => removetocart(i)} className="btn btn-danger">
                       Remove
                       </button>
                   </td >
@@ -211,7 +218,7 @@ function AppOferta() {
       </div>
       <div class="row">
         <div class="col text-center">
-          <h4>TOTAL: {(verificarPromocionesOferta())}</h4>
+          <h4>TOTAL: {(verificarPromociones())}</h4>
           
         </div>
       </div>
@@ -221,4 +228,4 @@ function AppOferta() {
           }
 
 
-export default AppOferta;
+export default Cart;

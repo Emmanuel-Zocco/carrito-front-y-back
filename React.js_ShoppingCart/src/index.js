@@ -5,10 +5,10 @@ import ReactDOM from 'react-dom';
 
 import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.css';
-import App from './App';
+import Cart from './Carts/Cart';
 import reportWebVitals from './reportWebVitals';
-import Appvip from './Appcopy';
-import AppOferta from './App3';
+import CartVip from './Carts/CartVip';
+import CartOferta from './Carts/CartOferta';
 import HomePage from './modules/Homepage/Home';
 
 
@@ -41,15 +41,15 @@ ReactDOM.render(
     <Routes>
   
     <Route  path="/" element={<HomePage />}> </Route>
-    <Route  path="/productos" element={<App />}> </Route>  
-    <Route path ="/vip" element={<Appvip />}> </Route>
-    <Route path ="/ofertas" element={<AppOferta />}> </Route>
+    <Route  path="/productos" element={<Cart />}> </Route>  
+    <Route path ="/vip" element={<CartVip />}> </Route>
+    <Route path ="/ofertas" element={<CartOferta />}> </Route>
     <Route path ="/agregarcliente" element={<AgregarUsuario/>}> </Route>
     <Route path ="/clientevip" element={<Clientevip />}> </Route>
     <Route path ="/login" element={<Login />}> </Route>
     <Route path ="/listacliente" element={<ListaUsuario/>}> </Route>
     <Route path ="/editarcliente" element={<UsuarioIndividual  />}> </Route>
-    <Route path ="/editarcliente/ :clienteid" element={<Editarcliente />}> </Route>
+    <Route path ="/editarcliente/:id" element={<Editarcliente />}> </Route>
     </Routes>
    
     </BrowserRouter>

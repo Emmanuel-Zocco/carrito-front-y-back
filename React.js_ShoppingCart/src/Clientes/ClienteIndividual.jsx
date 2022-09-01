@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 
 
-function UsuarioIndividual({usuario}){
+function ClienteIndividual({usuario}){
     console.log(usuario)
     return(
     <div className='container'>
@@ -24,4 +24,4 @@ function UsuarioIndividual({usuario}){
     </div>
 )}
 
-export default UsuarioIndividual
+export default ClienteIndividual

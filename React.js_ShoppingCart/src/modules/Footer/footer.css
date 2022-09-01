@@ -3,19 +3,43 @@
     
     border-bottom: 2px solid black;
     border-top: 1px solid black;
-  
+    display: flex;
+    
+    padding: 10px 0px;
+    list-style: none;
     position: absolute;
     bottom: 0;
     width: 100%;
+    gap: 10px;
   }
 
   .bi{
 
-    margin-left: 1250px;
+    
     color: blue;
+    
   }
+.iconos{
+  
+  justify-content:flex-end ;
+  
+  
+
+}
+.iconos:nth-child(3){
+  margin-right: 15px;
+}
+svg{
+  margin-left: 10px;
+}
 
   .red{
-    color:red
+    color:red;
+    display: inline-block;
+  }
+
+  .titulo{
+    flex-grow: 1;
+    margin-left: 10px;
   }
  

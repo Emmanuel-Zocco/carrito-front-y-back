@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
-import Appvip from '../../Appcopy';
+import Cartvip from '../../Carts/CartVip';
 import { useForm } from "react-hook-form";
 
 export default function Login() {

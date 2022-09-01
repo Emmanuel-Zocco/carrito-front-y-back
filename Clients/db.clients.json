@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "63058cc521bdb5eacab7b97e"
+  },
+  "nombre": "Cliente 1",
+  "edad": 10,
+  "estado": "VIP",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63058d4921bdb5eacab7b980"
+  },
+  "nombre": "Cliente 2",
+  "edad": 123,
+  "estado": "VIP",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63090bee24fa7a9015fc33de"
+  },
+  "nombre": "sol",
+  "edad": 40,
+  "estado": "vip",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630a79b847fea2aad96b5d9c"
+  },
+  "nombre": "Ema",
+  "edad": 39,
+  "estado": "cliente",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630a8f7f8f0b5ee39afa712a"
+  },
+  "nombre": "lean",
+  "edad": 39,
+  "estado": "vip",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "630c307c62896c713665093b"
+  },
+  "nombre": "mabel",
+  "edad": 60,
+  "estado": "vip",
+  "__v": 0
+}]

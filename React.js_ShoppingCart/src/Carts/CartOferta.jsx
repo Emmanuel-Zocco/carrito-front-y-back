@@ -1,18 +1,13 @@
 import { useState } from "react";
-//import Clock from "react-clock";
-import Clock from "./modules/Reloj/Reloj"
-import Header from "./modules/Header/Header";
 
-function App() {
-  
-
+function CartOferta() {
   let totalCarrito = 20
   const [cart, setCart] = useState([])
   const [products] = useState([
     {
       id: 1,
       name: "Product 1",
-      price: 500,
+      price: 400,
       url:
         "https://images.pexels.com/photos/59945/strawberry-fruit-delicious-red-59945.jpeg",
       cart: false,
@@ -21,7 +16,7 @@ function App() {
     {
       id: 2,
       name: "Product 2",
-      price: 300,
+      price: 200,
       url:
         "https://images.pexels.com/photos/52533/orange-fruit-vitamins-healthy-eating-52533.jpeg",
       cart: false,
@@ -30,7 +25,7 @@ function App() {
     {
       id: 3,
       name: "Product 3",
-      price: 600,
+      price: 500,
       url:
         "https://images.pexels.com/photos/51312/kiwi-fruit-vitamins-healthy-eating-51312.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       cart: false,
@@ -39,9 +34,8 @@ function App() {
   ])
   
 
-  function verificarPromociones(){
-    
-      let cantArticulos = 0;
+  function verificarPromocionesOferta(){
+    let cantArticulos = 0;
     let precioTotal = 0;
     if (cart.length>0){
       cart.map((i)=>{
@@ -55,15 +49,16 @@ function App() {
    
     if (cantArticulos > 3 && cantArticulos < 10){
       precioTotal = precioTotal * 0.75
+      
     }
     else if (cantArticulos > 9){
-      precioTotal = precioTotal - 100
-    }
-    return precioTotal;
-   
+      precioTotal = precioTotal - 300
+    
   }
-
-  function addtocart(item) {
+  return precioTotal;
+}
+  
+  function addtocartOferta(item) {
     let enCarrito = false;
    
     if (cart.length>0){
@@ -71,7 +66,7 @@ function App() {
         console.log(i)
        
         if (i.id == item.id){
-          increase(item)
+          increaseOferta(item)
           enCarrito = true
           
         }
@@ -91,7 +86,7 @@ function App() {
     
 
   }
-  function removetocart(item) {
+  function removetocartOferta(item) {
     let cart2 = cart.filter((i) => i.id != item.id)
     products.map((i) => {
       if (i.id == item.id) {
@@ -102,7 +97,7 @@ function App() {
    
 
   }
-  function increase(item) {
+  function increaseOferta(item) {
     let x = cart.map((i) => {
 
       if (item.id == i.id) {
@@ -114,7 +109,7 @@ function App() {
     setCart(x)
      
   }
-  function decrease(item) {
+  function decreaseOferta(item) {
     let x = cart.map((i) => {
 
       if (item.id == i.id && i.quantity > 1) {
@@ -128,9 +123,7 @@ function App() {
   }
  
   return (
-  
     <div className='container mt-2'>
-       
       <div className='row justify-content-center'>
         {products.map((item) => (
           <div className='col-3' key={item.id}>
@@ -143,14 +136,14 @@ function App() {
                 {
                   item.cart == false
                   &&
-                  <button className='btn btn-primary' onClick={() => addtocart(item)}>
-                    Add to cart 
+                  <button className='btn btn-primary' onClick={() => addtocartOferta(item)}>
+                    Add to cart Oferta
                 </button>
                 }
                 {
                   item.cart == true
                   &&
-                  <button className='btn btn-success' onClick={() => addtocart(item)}>
+                  <button className='btn btn-success' onClick={() => addtocartOferta(item)}>
                     Added
                 </button>
                 }
@@ -189,14 +182,14 @@ function App() {
                   </td>
                   <td>
                     <button
-                      onClick={() => decrease(i)}
+                      onClick={() => decreaseOferta(i)}
                       className="btn btn-primary btn-sm"
                     >
                       -
                       </button>
                     {i.quantity}
                     <button
-                      onClick={() => increase(i)}
+                      onClick={() => increaseOferta(i)}
 
                       className="btn btn-primary btn-sm"
                       size="sm"
@@ -206,7 +199,7 @@ function App() {
                   </td>
 
                   <td>
-                    <button onClick={() => removetocart(i)} className="btn btn-danger">
+                    <button onClick={() => removetocartOferta(i)} className="btn btn-danger">
                       Remove
                       </button>
                   </td >
@@ -218,7 +211,7 @@ function App() {
       </div>
       <div class="row">
         <div class="col text-center">
-          <h4>TOTAL: {(verificarPromociones())}</h4>
+          <h4>TOTAL: {(verificarPromocionesOferta())}</h4>
           
         </div>
       </div>
@@ -228,4 +221,4 @@ function App() {
           }
 
 
-export default App;
+export default CartOferta;

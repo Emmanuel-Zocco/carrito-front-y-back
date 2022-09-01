@@ -1,9 +1,9 @@
 import React, {useEffect, useState}from 'react';
-import UsuarioIndividual from './ClienteIndividual';
+import ClienteIndividual from './ClienteIndividual';
 import axios from 'axios'
 
 
-function ListaUsuario(){
+function ListaClientes(){
     const [datausuarios, setdatausuario] = useState([]);
     
     useEffect(() => {
@@ -19,7 +19,7 @@ function ListaUsuario(){
           
         }, []);
 
-const listaDeUsuarios = datausuarios.map(usuario=>{return <div><UsuarioIndividual usuario={usuario}/></div>})
+const listaDeUsuarios = datausuarios.map(usuario=>{return <div><ClienteIndividual usuario={usuario}/></div>})
 
     return(
     <div><h2>Lista de Clientes</h2>
@@ -27,4 +27,4 @@ const listaDeUsuarios = datausuarios.map(usuario=>{return <div><UsuarioIndividua
     </div>
 )}
 
-export default ListaUsuario
+export default ListaClientes
